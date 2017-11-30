@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <hr/>
                 <form method="POST" action="demo.html">
                     <div class="form-group">
@@ -43,12 +43,13 @@
                     </div>
 
                     <div class="form-group">
+                        <label> Gender </label>
                         <label> <input type="radio" name="gender" value="male"> Male </label>
                         <label> <input type="radio" name="gender" value="female"> Female </label>
                     </div>
 
                     <div class="form-group">
-                        <label for="address">Date of Birth</label>
+                        <label for="address">Address</label>
                         <textarea name="address" id="address" class="form-control" rows="5"></textarea>
                     </div>
 
@@ -98,10 +99,130 @@
                 </form>
 
             </div>
+
+            <div class="col-sm-8">
+                <hr/>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">First Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="first_name" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Last Name </label>
+                    <div class="col-sm-9">
+                        <input type="text" name="last_name"  class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">E-mail</label>
+                    <div class="col-sm-9">
+                        <input type="email" name="email" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" name="password"  class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Phone Number</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="phone_number" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Date of Birth</label>
+                    <div class="col-sm-9">
+                        <input type="date" name="date_of_birth" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3"> Gender </label>
+                    <div class="col-sm-9">
+                        <label > <input type="radio" name="gender" value="male"> Male </label>
+                        <label > <input type="radio" name="gender" value="female"> Female </label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3">Address</label>
+                    <div class="col-sm-9">
+                        <textarea name="address" class="form-control" rows="5"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">District Name</label>
+                    <div class="col-sm-9">
+                        <select name="district_name" lass="form-control">
+                            <option>---Select District Name---</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="noakhali">Noakhali</option>
+                            <option value="comilla">Comilla</option>
+                            <option value="rajshahi">Rajshahi</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Languages</label>
+                    <div class="col-sm-9">
+                        <select multiple name="languages" class="form-control">
+                            <option value="1">C</option>
+                            <option value="2">C++</option>
+                            <option value="3">Java</option>
+                            <option value="4">PHP</option>
+                            <option value="5">Python</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Image</label>
+                    <div class="col-sm-9">
+                        <input type="file" name="image" class="form-control" accept="image/*"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Multiple Image</label>
+                    <div class="col-sm-9">
+                        <input multiple type="file" name="image" class="form-control" accept="image/*"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3"></label>
+                    <div class="col-sm-9">
+                        <div class="form-check-label">
+                            <label>
+                                <input type="checkbox" name="agree" class="form-check-input" value="agree"/> I agree with all terms & conditions.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <input type="submit" name="btn" class="btn btn-primary btn-block">
+                </div>
+
+            </div>
         </div>
     </div>
 
 
-<script src="js/bootstrap.js"
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
