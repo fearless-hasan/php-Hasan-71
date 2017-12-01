@@ -1,0 +1,239 @@
+*{
+	box-sizing: border-box;
+}
+
+.col-1{ width: 8.33%; }
+.col-2{ width: 16.66%; }
+.col-3{ width: 25%; }
+.col-4{ width: 33.33%; }
+.col-5{ width: 41.33%; }
+.col-6{ width: 50%; }
+.col-7{ width: 58.33%; }
+.col-8{ width: 66.66%; }
+.col-9{ width: 75%; }
+.col-10{ width: 83.33%; }
+.col-11{ width: 91.66%; }
+.col-12{ width: 100%; }
+
+[class*='col-']{
+	float: left;
+	border: 1px solid;
+}
+
+.row:after{
+	content: ' ';
+	clear: both;
+	display: block;
+}
+
+.container{
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+}
+
+.header-height{ height: 200px; }
+.menu-height{ height: 50px; }
+.content-height{ height: 1200px; }
+.footer-top-height{ height: 250px; }
+.footer-height{ height: 40px; }
+
+.main-ul{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+.main-ul li{
+	float: left;
+	width: 120px;
+	border: 1px solid gray;
+}
+
+.main-ul li a{
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	height: 47px;
+	padding-top: 15px; 
+	background-color: black;
+	color: white;
+	transition: 2s;
+}
+
+.main-ul li a:hover{
+	background-color: white;
+	color: black;
+}
+
+.div-one{
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	margin: 50px 0px 0px 50px; 
+	border-radius: 10px 50px;
+}
+
+.div-two{
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	margin: 50px 0px 0px 50px; 
+	border-radius: 10px 50px;
+	transform: skew(30deg);
+}
+
+.div-three{
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	margin: 50px 0px 0px 150px; 
+	border-radius: 100px;
+}
+
+.div-left{
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	margin: 0px 0px 0px 50px; 
+	transform: skewY(25deg);
+	float: left;
+}
+
+.div-right{
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	margin: 0px 0px 0px 5px; 
+	transform: skewY(-25deg);
+	float: left;
+}
+
+.a-one{
+	height: 200px;
+	width: 25px;
+	background-color: red;
+	margin: 50px 0px 0px 75px; 
+	transform: skew(-30deg);
+	float: left;
+}
+
+.a-two{
+	height: 200px;
+	width: 25px;
+	background-color: red;
+	margin: 50px 0px 0px 100px; 
+	transform: skew(30deg);
+	float: left;
+}
+
+.a-three{
+	height: 25px;
+	width: 100px;
+	background-color: red;
+	margin: 125px 0px 0px 100px; 
+}
+
+.c{
+	height: 100px;
+	width: 50px;
+	margin: 125px 0px 0px 100px; 
+	border: 1px solid red;
+	border-right: none;
+	border-radius: 100px 0px 0px 100px;
+}
+
+.div-zoom{
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	margin: 50px 0px 0px 50px; 
+	transform: scale(1);
+	float: left;
+	transition: 1s;
+}
+
+.div-zoom:hover{
+	transform: scale(1.5);
+}
+
+.div-rotate{
+	height: 200px;
+	width: 200px;
+	background-color: red;
+	margin: 50px 0px 0px 50px; 
+	transform: rotate(0deg);
+	float: left;
+	transition: 1s;
+}
+
+.div-rotate:hover{
+	transform: rotate(360deg);
+}
+
+.div-background{
+	height: 200px;
+	width: 200px;
+	float: left;
+	margin: 50px 0px 0px 50px; 
+	background: linear-gradient(to left, red, green );
+}
+
+.div-key-frames{
+	height: 200px;
+	width: 200px;
+	float: left;
+	margin: 50px 0px 0px 50px; 
+	animation: green-to-yellow;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	transform: scale(1);
+	transition: 1s;
+}
+
+.div-reload{
+	height: 200px;
+	width: 200px;
+	float: left;
+	margin: 50px 0px 0px 50px;
+	background-color: red;
+	animation-name: rotate;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.div-slider{
+	height: 64px;
+	width: 64px;
+	float: left;
+	margin: 50px 0px 0px 50px;
+	background-color: red;
+	animation-name: slider;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes green-to-yellow{
+	/*from{ background-color: green; }
+	to{ background-color: yellow; }*/
+	20%{ background-color: violet; width: 200px; height: 200px; }
+	40%{ background-color: blue; width: 400px; height: 200px; }
+	60%{ background-color: green; width: 200px; height: 200px; }
+	80%{ background-color: yellow; width: 200px; height: 400px; }
+	100%{ background-color: red; width: 200px; height: 200px; }
+}
+
+@keyframes rotate{
+	100%{ background-color: blue; transform: rotate(0deg) scale(1); }
+	50%{ background-color: red; transform: rotate(360deg) scale(1.5); }
+	100%{ background-color: blue; transform: rotate(0deg) scale(1); }
+}
+
+@keyframes slider{
+	0%{ background: url("../images/1.png"); }
+	25%{ background: url("../images/2.png"); }
+	50%{ background: url("../images/3.png"); }
+	75%{ background: url("../images/4.png"); }
+	100%{ background: url("../images/5.png"); }
+}
+
