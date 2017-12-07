@@ -34,8 +34,8 @@
 				</form>
 
 				<ul class="navbar-nav">
-					<li class="nav-item"><a href="" class="nav-link">login</a></li>
-					<li class="nav-item"><a href="" class="nav-link">SignUp</a></li>
+					<li class="nav-item"><a href="" class="nav-link" data-toggle="modal" data-target="#loginModal">login</a></li>
+					<li class="nav-item"><a href="" class="nav-link" data-toggle="modal" data-target="#signUpModal">SignUp</a></li>
 				</ul>
 			</div>
 		</div>
@@ -95,6 +95,100 @@
 	</div>
 
 	<hr/>
+
+
+	<div class="modal fade" id="loginModal">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>login Modal Complete</h3>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<form method="POST" action="">
+									<div class="form-group">
+										<label>Email</label>
+										<input type="email" name="email" class="form-control" />
+									</div>
+									<div class="form-group">
+										<label>Email</label>
+										<input type="password" name="password" class="form-control" />
+									</div>
+									<div class="form-group">
+										<input type="submit" name="Submit" class=" btn btn-block btn-success" />
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<p>now I can create Modal.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="signUpModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>Sign Up Modal Complete</h3>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<form method="POST" action="">
+									<div class="row form-group">
+										<label class="col-form-label col-sm-3">Full Name</label>
+										<div class="col-sm-9">
+											<input type="text" name="full_name" class="form-control" />
+										</div>
+									</div>
+									<div class="row form-group">
+										<label class="col-form-label col-sm-3">E-mail</label>
+										<div class="col-sm-9">
+											<input type="email" name="email" class="form-control" />
+										</div>
+									</div>
+									<div class="row form-group">
+										<label class="col-form-label col-sm-3">Gender</label>
+										<div class="col-sm-9 ">
+											<label><input type="radio" name="gender" value="male"/>Male</label>
+											<label><input type="radio" name="gender" value="female"/>Female</label>
+										</div>
+									</div>
+									<div class="row form-group">
+										<label class="col-form-label col-sm-3">Date of Birth</label>
+										<div class="col-sm-9">
+											<input type="date" name="date_of_birth" class="form-control" />
+										</div>
+									</div>
+									<div class="row form-group">
+										<label class="col-form-label col-sm-3"></label>
+										<div class="col-sm-9">
+											<div class="form-check-label">
+												<label><input type="checkbox" name="agree" value="agree" class="form-check-input"/>I agree with this.</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="submit" name="submit" class="form-control btn btn-success" />
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<p>looks good.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="js/popper.min.js"></script>
