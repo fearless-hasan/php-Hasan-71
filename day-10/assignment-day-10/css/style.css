@@ -1,0 +1,155 @@
+.navbar-light .navbar-brand {
+  color: rgba(24, 33, 84, 0.9);
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: rgba(24, 33, 84, 0.9);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(24, 33, 84, 0.5);
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: rgba(24, 33, 84, 0.7);
+}
+
+.navbar-light .navbar-nav .nav-link.disabled {
+  color: rgba(24, 33, 84, 0.3);
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgba(24, 33, 84, 0.9);
+}
+
+.navbar-light .navbar-toggler {
+  color: rgba(24, 33, 84, 0.5);
+  border-color: rgba(24, 33, 84, 0.1);
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(24, 33, 84, 0.5);' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-light .navbar-text {
+  color: rgba(24, 33, 84, 0.5);
+}
+
+.navbar-light .navbar-text a {
+  color: rgba(24, 33, 84, 0.9);
+}
+
+.navbar-light .navbar-text a:focus, .navbar-light .navbar-text a:hover {
+  color: rgba(24, 33, 84, 0.9);
+}
+
+.navbar{
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.section-one{
+    background: url("../images/bg-photo-2.jpg");
+    background-attachment: fixed;
+    width: 100%;
+    background-size: 100% 100%;
+    height: 600px;
+}
+
+.section-two{
+	padding-top: 200px;
+    background: #F1F1F1;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    color: rgba(24, 33, 84, 0.9);
+}
+
+.pd-top{
+	padding-top: 200px; 
+}
+.pd-left{
+	margin-left: 100px; 
+}
+.pd-right{
+	padding-right: 100px; 
+}
+.photo-height{
+	height: 600px;
+}
+.content-height{
+	height: 75px;
+}
+
+/*
+.navbar-div{
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar-brand{
+	height: 120px;
+	padding-top: 40px;	
+	color: #182153 !important; 
+	font-weight: bold;
+}
+.header-grad {
+    height: 80px;
+    background: white; /* For browsers that do not support gradients */    /*
+    background: -webkit-linear-gradient(top, #F3F6F8 , white); /* For Safari 5.1 to 6.0 *//*
+    background: -o-linear-gradient(top, #F3F6F8 , white); /* For Opera 11.1 to 12.0 *//*
+    background: -moz-linear-gradient(top, #F3F6F8 , white); /* For Firefox 3.6 to 15 *//*
+    background: linear-gradient(top, #F3F6F8 , white);  Standard syntax (must be last) 
+}
+
+a.header-grad:focus, a.header-grad:hover {
+  background-color: #182153 !important;
+}
+
+
+.nav-link{
+	color: #182153 !important; 
+	font-size: 14px;
+}
+.nav-item{
+	padding-left: 20px;
+}
+.section-one{
+	display: block;
+    background: url("../images/bg-photo-2.jpg");
+    width: 100%;
+    position: absolute;
+    background-size: 100% 100%;
+    height: 1590px;
+    overflow: hidden;
+}
+
+.pd-top{
+	padding-top: 100px; 
+}
+.pd-left{
+	margin-left: 100px; 
+}
+.pd-right{
+	padding-right: 100px; 
+}
+.photo-height{
+	height: 590px;
+}
+.content-height{
+	height: 100px;
+}
+
+.section-two{
+	margin-top: 590px;
+    background: #F1F1F1;
+    width: 100%;
+    height: 100px;
+}*/
