@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day-12</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<hr/>
+<h2>this is heading 2.</h2>
+<h1>This is heading.</h1>
+
+<hr/>
+<table>
+    <tr>
+        <th>First Name</th>
+        <td><input type="text" id="firstName"> </td>
+    </tr>
+    <tr>
+        <th>Last Name</th>
+        <td><input type="text" id="lastName"> </td>
+    </tr>
+    <tr>
+        <th>Full Name</th>
+        <td><input type="text" id="fullName"> </td>
+    </tr>
+    <tr>
+        <th></th>
+        <td><input type="submit" id="btn" value="Submit"> </td>
+    </tr>
+</table>
+
+<hr/>
+
+<table>
+    <tr>
+        <th>First Number</th>
+        <td colspan="4"><input type="text" id="firstNumber"> </td>
+    </tr>
+    <tr>
+        <th>Last Number</th>
+        <td colspan="4"><input type="text" id="lastNumber"> </td>
+    </tr>
+    <tr>
+        <th>Answer</th>
+        <td colspan="4"><input type="text" id="answer"> </td>
+    </tr>
+    <tr>
+        <th></th>
+        <td><input type="submit" id="addition" value="+"> </td>
+        <td><input type="submit" id="subtraction" value="-"> </td>
+        <td><input type="submit" id="multiplication" value="*"> </td>
+        <td><input type="submit" id="division" value="/"> </td>
+    </tr>
+</table>
+
+<hr/>
+
+<div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 m-auto">
+                    <div class="row form-group">
+                        <label class="col-form-label col-sm-3">Starting Number</label>
+                        <div class="col-sm-9">
+                            <input type="number" name="starting_number" id="startingNumber" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-form-label col-sm-3">Ending Number</label>
+                        <div class="col-sm-9">
+                            <input type="number" name="ending_number" id="endingNumber" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-form-label col-sm-3">Result</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="result_number" id="result" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="form-control btn btn-success" name="submit" id="submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-danger form-control" id="redButton">Red</button>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-success form-control" id="greenButton">Green</button>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-info form-control" id="blueButton">Blue</button>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-dark form-control" id="defaultButton">Default</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-style" id="divOne">
+
+            </div>
+        </div>
+    </div>
+
+<hr/>
+
+
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/my-script.js"></script>
+</body>
+</html>
