@@ -23,11 +23,17 @@
 		<div class="row">
 			<div class="col-sm-4 m-auto">
 				<div class="card">
-					<div class="card-body">
+					<div class="card-body" style="padding: 30px;">
+						<div class="row form-group"  style="text-align: right; border:none; margin: 0px;">
+							<output  style="text-align: right; width: 100%" id="resultString"></output>
+						</div>
 						<div class="row form-group">
-							<div class="col-sm-12" >
-								<input type="number" name="btn" id="btn" class="form-control" value="0" style="text-align: right; height: 100px; font-size: 22px;">
-							</div>
+								<div class="col-sm-1 " style="padding: 0px; margin: auto; height: 100px;">
+								<output name="flag_minus" id="flagMinus" class="form-control align-middle" style="height: 100%; position: relative; font-size: 22px; width: 100%; border-right: none; border-top-right-radius: 0rem; border-bottom-right-radius: 0rem; padding-top: 100%;" ></output>
+								</div>
+								<div class="col-sm-11" style=" padding: 0px;height: 100px;">
+								<input type="number" name="result" id="result" class="form-control" value="0" style="text-align: right; height: 100%; width: 100%; font-size: 22px; border-left: none; border-top-left-radius: 0rem; border-bottom-left-radius: 0rem; ">
+								</div>							
 						</div>
 						<div class="row form-group">
 							<div class="col-sm-3">
@@ -140,7 +146,7 @@
 						<div class="row form-group">
 							<label class="col-form-label col-sm-5">Result</label>
 							<div class="col-sm-7">
-								<input type="text" name="result" id="result" class="form-control">
+								<input type="text" name="normResult" id="result" class="form-control">
 							</div>
 						</div>
 						<div class="row form-group">

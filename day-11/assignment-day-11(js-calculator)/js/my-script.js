@@ -1,3 +1,32 @@
+
+var st = ''
+
+var c = document.getElementById('c');
+c.onclick = function() {	
+	document.getElementById('result').value=0;	
+	document.getElementById('resultString').value='';
+	document.getElementById('flagMinus').value='';	
+};
+
+var backspace = document.getElementById('backspace');
+backspace.onclick = function() {	
+	document.getElementById('result').value=Number(document.getElementById('result').value)/10;	
+	document.getElementById('resultString').value='';
+};
+
+var one = document.getElementById('one');
+one.onclick = function() {	
+	document.getElementById('result').value=Number(document.getElementById('result').value)*10+1;	
+	document.getElementById('resultString').value=Number(document.getElementById('resultString').value)+'1';	
+};
+var two = document.getElementById('two');
+two.onclick = function() {	
+	document.getElementById('result').value=Number(document.getElementById('result').value)*10+2;	
+	document.getElementById('resultString').value=Number(document.getElementById('resultString').value)+'2';	
+};
+
+
+
 var btnElement = document.getElementById('btn');
 	btnElement.onclick = function(){
 		var firstNameValue = document.getElementById('firstName').value;
@@ -13,7 +42,7 @@ var btnElement = document.getElementById('btn');
 		var secondNumberValue = Number(document.getElementById('secondNumber').value);
 		var resultValue = firstNumberValue+secondNumberValue;
 		//alert(fullNameValue);
-		document.getElementById('result').value=resultValue;
+		document.getElementById('normResult').value=resultValue;
 	};
 
 	var btnAddition = document.getElementById('normSubtraction');
@@ -22,7 +51,7 @@ var btnElement = document.getElementById('btn');
 		var secondNumberValue = Number(document.getElementById('secondNumber').value);
 		var resultValue = firstNumberValue-secondNumberValue;
 		//alert(fullNameValue);
-		document.getElementById('result').value=resultValue;
+		document.getElementById('normResult').value=resultValue;
 	};
 
 	var btnAddition = document.getElementById('normMultiplication');
@@ -31,7 +60,7 @@ var btnElement = document.getElementById('btn');
 		var secondNumberValue = Number(document.getElementById('secondNumber').value);
 		var resultValue = firstNumberValue*secondNumberValue;
 		//alert(fullNameValue);
-		document.getElementById('result').value=resultValue;
+		document.getElementById('normResult').value=resultValue;
 	};
 
 	var btnAddition = document.getElementById('normDivision');
@@ -40,7 +69,7 @@ var btnElement = document.getElementById('btn');
 		var secondNumberValue = Number(document.getElementById('secondNumber').value);
 		var resultValue = firstNumberValue/secondNumberValue;
 		//alert(fullNameValue);
-		document.getElementById('result').value=resultValue;
+		document.getElementById('normResult').value=resultValue;
 	};
 
 
@@ -50,5 +79,5 @@ var btnElement = document.getElementById('btn');
 		var secondNumberValue = Number(document.getElementById('secondNumber').value);
 		var resultValue = firstNumberValue%secondNumberValue;
 		//alert(fullNameValue);
-		document.getElementById('result').value=resultValue;
+		document.getElementById('normResult').value=resultValue;
 	};
