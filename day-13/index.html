@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Day-13 (DOM)</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.cs.css">
+	<style>
+		.main-image{
+			height: 700px;
+			width: 100%;
+			border: 1px solid;
+		}
+		.sub-image{
+			height: 150px;
+			width: 100%;
+			border: 1px solid gray;
+		}
+	</style>
+</head>
+<body>
+
+<!-- 
+	<p>Hello Ashik</p>
+	<p>Hello Tanmoy</p>
+	<p>Hello Molla</p>
+	<p>Hello vibek</p>
+
+	<a href="">Link one</a>
+	<a href="">Link two</a>
+	<a href="">Link three</a>
+	<a href="">Link four</a> -->
+<div style="height: 900px;" class="container">
+	<div class="row">
+
+		<img src="images/1.jpg" alt="" class="main-image" id="mainImage">
+	</div>
+	<div class="row" style="margin-top: 25px;">
+		<div class="col-sm-3">
+			<img src="images/1.jpg" alt="" class="sub-image" id="image1">
+		</div>
+		<div class="col-sm-3">
+			<img src="images/2.jpg" alt="" class="sub-image" id="image2">
+		</div>
+		<div class="col-sm-3">
+			<img src="images/3.jpg" alt="" class="sub-image" id="image3">
+		</div>
+		<div class="col-sm-3">
+			<img src="images/4.jpg" alt="" class="sub-image" id="image4">
+		</div>
+	</div>
+</div>
+
+
+
+
+<hr/>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 m-auto">
+				<div class="card">
+					<div class="card-body">
+						<div class="row form-group">
+							<label class="col-form-label col-sm-3">First Name</label>
+							<div class="col-sm-9">
+								<input type="text" name="first_name" id="firstName" class="form-control">
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-form-label col-sm-3">Last Name</label>
+							<div class="col-sm-9">
+								<input type="text" name="last_name" id="lastName" class="form-control">
+							</div>
+						</div>
+						<!--<div class="row form-group">-->
+							<!--<label class="col-form-label col-sm-3">Last Name</label>-->
+							<!--<div class="col-sm-9">-->
+								<!--<input type="text" name="last_name" id="full" class="form-control">-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="row form-group">-->
+							<!--<label class="col-form-label col-sm-3"></label>-->
+							<!--<div class="col-sm-9">-->
+								<!--<input type="submit" name="btn" id="btn" class="btn btn-success" value="Submit">-->
+							<!--</div>-->
+						<!--</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr/>
+<div class="container" >
+	<table class="table" border="1">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Full Name</th>
+		</tr>
+		<tr>
+			<td id="tableFirstName"></td>
+			<td id="tableLastName"></td>
+			<td id="tableFullName"></td>
+		</tr>
+	</table>
+</div>
+<hr/>
+
+
+<h1>This is a heading.</h1>
+<p>This is a paragraph.</p>
+<ul>
+	<li>List One</li>
+	<li>List Two</li>
+	<li>List Three</li>
+</ul>
+
+<hr/>
+<input type="submit" class="btn btn-danger" id="btn" value="Danger">
+<div id="div"></div>
+
+<hr/>
+
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="js/my-script.js"></script>
+
+<script src="my-script.js"></script>
+</body>
+</html>

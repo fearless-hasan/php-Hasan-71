@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Day-11</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.cs.css">
+</head>
+<body>
+
+<!-- 
+	<p>Hello Ashik</p>
+	<p>Hello Tanmoy</p>
+	<p>Hello Molla</p>
+	<p>Hello vibek</p>
+
+	<a href="">Link one</a>
+	<a href="">Link two</a>
+	<a href="">Link three</a>
+	<a href="">Link four</a> -->
+<hr/>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 m-auto">
+				<div class="card">
+					<div class="card-body">
+						<div class="row form-group">
+							<div class="col-sm-12" >
+								<input type="number" name="btn" id="btn" class="form-control" value="0" style="text-align: right; height: 100px; font-size: 22px;">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="c" class="btn btn-danger form-control" value="C">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="ce" class="btn btn-outline-dark form-control" value="CE">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="backspace" class="btn btn-outline-secondary form-control" value="&circlearrowleft;">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="inverse" class="btn btn-outline-secondary form-control" value="1/X">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="sqrt" class="btn btn-outline-warning form-control" value="&Sqrt;">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="square" class="btn btn-outline-warning form-control" value="X^2">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="remainder" class="btn btn-outline-warning form-control" value="%">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="division" class="btn btn-outline-info form-control" value="/">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="seven" class="btn btn-outline-success form-control" value="7">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="eight" class="btn btn-outline-success form-control" value="8">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="nine" class="btn btn-outline-success form-control" value="9">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="multiplication" class="btn btn-outline-info form-control" value="*">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="four" class="btn btn-outline-success form-control" value="4">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="five" class="btn btn-outline-success form-control" value="5">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="six" class="btn btn-outline-success form-control" value="6">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="subtraction" class="btn btn-outline-info form-control" value="-">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="one" class="btn btn-outline-success form-control" value="1">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="two" class="btn btn-outline-success form-control" value="2">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="three" class="btn btn-outline-success form-control" value="3">
+							</div>
+							<div class="col-sm-3">
+								<input type="submit" name="btn" id="addition" class="btn btn-outline-info form-control" value="+">
+							</div>
+						</div>
+						<div class="row form-group">
+						<div class="col-sm-3">
+							<input type="submit" name="btn" id="reverse" class="btn btn-outline-warning form-control" value="+/-">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="btn" id="zero" class="btn btn-outline-success form-control" value="0">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="btn" id="point" class="btn btn-outline-warning form-control" value=".">
+						</div>
+						<div class="col-sm-3">
+							<input type="submit" name="btn" id="equal" class="btn btn-success form-control" value="=">
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr/>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 m-auto">
+				<div class="card">
+					<div class="card-body">
+						<div class="row form-group">
+							<label class="col-form-label col-sm-5">First Number</label>
+							<div class="col-sm-7">
+								<input type="text" name="first_number" id="firstNumber" class="form-control">
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-form-label col-sm-5">Second Number</label>
+							<div class="col-sm-7">
+								<input type="text" name="second_number" id="secondNumber" class="form-control">
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-form-label col-sm-5">Result</label>
+							<div class="col-sm-7">
+								<input type="text" name="result" id="result" class="form-control">
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-form-label col-sm-5"></label>
+							<div class="col-sm-7">
+								<input type="submit" name="addition" id="normAddition" class="btn btn-success" value="+">
+								<input type="submit" name="subtraction" id="normSubtraction" class="btn btn-success" value="-">
+								<input type="submit" name="multiplication" id="normMultiplication" class="btn btn-success" value="*">
+								<input type="submit" name="division" id="normDivision" class="btn btn-success" value="/">
+								<input type="submit" name="remainder" id="normRemainder" class="btn btn-success" value="%">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr/>
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/my-script.js"></script>
+
+<script src="my-script.js"></script>
+</body>
+</html>
