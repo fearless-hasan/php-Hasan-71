@@ -294,6 +294,10 @@ point.onclick = function() {
 
 
 
+var regularCalculator = document.getElementById('regularCalculator');
+regularCalculator.onclick = function{
+	
+}
 
 
 
