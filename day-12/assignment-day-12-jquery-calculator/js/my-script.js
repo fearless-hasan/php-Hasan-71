@@ -292,59 +292,12 @@ point.onclick = function() {
 
 
 
-
-
-var regularCalculator = document.getElementById('regularCalculator');
-regularCalculator.onclick = function{
+var simpleCalculator = document.getElementById('simpleCalculator');
+simpleCalculator.onclick = function() {
 	
-}
-
-
-
-
-
-var btnAddition = document.getElementById('normAddition');
-btnAddition.onclick = function(){
-	var firstNumberValue = Number(document.getElementById('firstNumber').value);
-	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue+secondNumberValue;
-	//alert(fullNameValue);
-	document.getElementById('normResult').value=resultValue;
-};
-
-var btnAddition = document.getElementById('normSubtraction');
-btnAddition.onclick = function(){
-	var firstNumberValue = Number(document.getElementById('firstNumber').value);
-	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue-secondNumberValue;
-	//alert(fullNameValue);
-	document.getElementById('normResult').value=resultValue;
-};
-
-var btnAddition = document.getElementById('normMultiplication');
-btnAddition.onclick = function(){
-	var firstNumberValue = Number(document.getElementById('firstNumber').value);
-	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue*secondNumberValue;
-	//alert(fullNameValue);
-	document.getElementById('normResult').value=resultValue;
-};
-
-var btnAddition = document.getElementById('normDivision');
-btnAddition.onclick = function(){
-	var firstNumberValue = Number(document.getElementById('firstNumber').value);
-	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue/secondNumberValue;
-	//alert(fullNameValue);
-	document.getElementById('normResult').value=resultValue;
 };
 
 
-var btnAddition = document.getElementById('normRemainder');
-btnAddition.onclick = function(){
-	var firstNumberValue = Number(document.getElementById('firstNumber').value);
-	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue%secondNumberValue;
-	//alert(fullNameValue);
-	document.getElementById('normResult').value=resultValue;
-};
+
+
+
