@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>JavaScript Variable</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+
+
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script>
+        document.write('write something...');
+        document.write('<br/>');
+        var x = 'hello';
+        var y = 'all';
+        document.write(x);
+        document.write('<br/>');
+        document.write(x+y);
+        document.write('<br/>');
+
+        document.write('say to you: "'+x+' '+y +"\"");
+        document.write('<br/>');
+        document.write('<br/>');
+        document.write('<br/>');
+
+        var x=10;
+        var y=20;
+
+        document.write(x+y);
+        document.write('<br/>');
+
+        document.write(x++);
+        document.write('<br/>');
+        document.write(++x);
+        document.write('<br/>');
+        document.write(--x);
+        document.write('<br/>');
+        document.write(x--);
+        document.write('<br/>');
+        document.write('<br/>');
+        document.write('<br/>');
+
+        document.write(x+=y);       //x=x+y
+        document.write('<br/>');
+        document.write(x-=y);       //x=x-y
+        document.write('<br/>');
+        document.write(x*=y);       //x=x*y
+        document.write('<br/>');
+        document.write(x/=y);       //x=x/y
+        document.write('<br/>');
+        document.write(x%=y);       //x=x%y
+        document.write('<br/>');
+        document.write('<br/>');
+        document.write('<br/>');
+
+
+//        var x=10;
+//        var y=20;
+//
+        var x='20';
+        var y=20;
+
+        document.write(x>y);
+        document.write('<br/>');
+        document.write(x>=y);
+        document.write('<br/>');
+        document.write(x<y);
+        document.write('<br/>');
+        document.write(x<=y);
+        document.write('<br/>');
+        document.write(x==y);
+        document.write('<br/>');
+        document.write(x!=y);
+        document.write('<br/>');
+        document.write(x===y);
+        document.write('<br/>');
+        document.write(x!==y);
+        document.write('<br/>');
+
+        document.write(typeof (x));
+        document.write('<br/>');
+        document.write('<br/>');
+        document.write('<br/>');
+
+
+        var x = 10;
+        var y = 20;
+        var z = 30;
+        var a = true;
+
+        document.write((x<y) && (y<z));
+        document.write('<br/>');
+        document.write((x<y) || (y<z));
+        document.write('<br/>');
+        document.write(!a);
+        document.write('<br/>');
+        document.write('<br/>');
+        document.write('<br/>');
+
+        var x=100;
+        var y=20;
+
+        document.write('single statement');
+        document.write('<br/>');
+
+        if(x>y){
+            document.write('if statement');
+        }
+        document.write('<br/>');
+
+
+        if(x>y){
+            document.write('if else statement');
+        } else {
+            document.write('else statement');
+        }
+        document.write('<br/>');
+
+        if(x==y){
+            document.write('if == statement');
+        } else if (x>y){
+            document.write('else if x>y statement');
+        } else{
+            document.write('else x<y statement');
+        }
+        document.write('<br/>');
+
+        var a=4;
+
+        switch (a){
+            case 1:
+                document.write('switch case 1.');
+                break;
+            case 2:
+                document.write('switch case 2.');
+                break;
+            case 3:
+                document.write('switch case 3.');
+                break;
+            case 4:
+                document.write('switch case 4.');
+                break;
+            default:
+                document.write('switch case default.');
+        }
+        document.write('<br/>');
+        document.write('<br/>');
+        document.write('<br/>');
+
+
+        var x;
+
+        for(x=56;x<=61;x++){
+            document.write(x+'<br>');
+        }for(x=99;x>=88;x--){
+            document.write(x+'<br>');
+        }
+
+        var x=10;
+        while (x<15) {
+            document.write('Hello While.<br>');
+            x++;
+        }
+
+        document.write('<br/>');
+
+        var x=10;
+
+         do{
+            document.write('Hello Do-While.<br>');
+            x++;
+        }
+        while (x<15);
+
+    </script>
+</body>
+</html>

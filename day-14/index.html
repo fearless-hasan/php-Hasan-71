@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Day-14 (Validation)</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
+</head>
+<body>
+
+<hr/>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 m-auto">
+				<div class="card">
+					<div class="card-body">
+						<form id="btn" method="post" action="">
+						<div class="row form-group">
+							<label class="col-form-label col-sm-3">First Name</label>
+							<div class="col-sm-9">
+								<input type="text" name="first_name" id="firstName" class="form-control">
+								<span id="firstNameError"></span>
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-form-label col-sm-3">First Name</label>
+							<div class="col-sm-9">
+								<input type="text" name="last_name" id="lastName" class="form-control">
+								<span id="lastNameError"></span>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3"> Gender </label>
+							<div class="col-sm-9">
+								<label> <input type="radio" name="gender" value="male"> Male </label>
+								<label> <input type="radio" name="gender" value="female"> Female </label>
+								<span id="genderError"></span>
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-form-label col-sm-3">E-mail Address</label>
+							<div class="col-sm-9">
+								<input type="text" name="email" id="email" class="form-control">
+								<span id="emailError"></span>
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-form-label col-sm-3">Password</label>
+							<div class="col-sm-9">
+								<input type="password" name="password" id="password" class="form-control">
+								<input type="checkbox" id="checkbox"> Show Password
+								<span id="passwordError"></span>
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-form-label col-sm-3">Confirm Password</label>
+							<div class="col-sm-9">
+								<input type="password" name="confirm_password" id="confirmPassword" class="form-control">
+								<span id="confirmPasswordError"></span>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-form-label col-sm-3">District Name</label>
+							<div class="col-sm-9">
+								<select name="district_name" class="form-control" id="districtName">
+									<option value=" ">---Select District Name---</option>
+									<option value="dhaka">Dhaka</option>
+									<option value="noakhali">Noakhali</option>
+									<option value="comilla">Comilla</option>
+									<option value="rajshahi">Rajshahi</option>
+								</select>
+								<span id="districtNameError"></span>
+							</div>
+
+						</div>
+						<!--<div class="row form-group">-->
+							<!--<label class="col-form-label col-sm-3">Last Name</label>-->
+							<!--<div class="col-sm-9">-->
+								<!--<input type="text" name="last_name" id="lastName" class="form-control">-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="row form-group">-->
+							<!--<label class="col-form-label col-sm-3">Last Name</label>-->
+							<!--<div class="col-sm-9">-->
+								<!--<input type="text" name="last_name" id="full" class="form-control">-->
+							<!--</div>-->
+						<!--</div>-->
+						<div class="row form-group">
+							<label class="col-form-label col-sm-3"></label>
+							<div class="col-sm-9">
+								<input type="submit" name="btn" id="" class="btn btn-success" value="Submit">
+							</div>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr/>
+<div class="container" >
+	<table class="table" border="1">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Full Name</th>
+			<th>Email</th>
+			<th>login</th>
+		</tr>
+		<tr>
+			<td id="tableFirstName"></td>
+			<td id="tableLastName"></td>
+			<td id="tableFullName"></td>
+			<td id="tableEmail"></td>
+			<td id="tableLogin"></td>
+		</tr>
+	</table>
+</div>
+<hr/>
+
+
+
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+	<script src="my-script.js"></script>
+</body>
+</html>
