@@ -10,6 +10,7 @@
 //     document.getElementById('full').value=fullNameValue;
 // };
 
+
 function CheckFirstName() {
     var firstNameLength = $('#firstName').val().length;
     if(firstNameLength>=6 && firstNameLength<=15){
@@ -188,6 +189,21 @@ $('#districtName')
     })
 ;
 
+
+$('#imageName')
+    .change(function () {
+        // var input = document.getElementById("imageName");
+        var input = $('#imageName')[0];
+        var fReader = new FileReader();
+        fReader.readAsDataURL(input.files[0]);
+        fReader.onloadend = function (event) {
+            var img = $('#image')[0];
+            img.src = event.target.result;
+        }
+        $('#show').css('display', 'block');
+    })
+;
+
 $('#btn').submit(function () {
     if(CheckFirstName()==true && CheckLastName()==true && ConfirmGender()==true && CheckEmail()==true && CheckPassword()==true && ConfirmPassword()==true && ConfirmDistrict()==true) {
         return true;
@@ -196,6 +212,10 @@ $('#btn').submit(function () {
     }
 });
 
+// $('#btnSecond').click(function () {
+//
+//     $('#image').attr('src','../day-8/images/1.jpg');
+// });
 
 
 

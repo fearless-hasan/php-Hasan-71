@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>Day-14 (Validation)</title>
+	<title>Day-14 (Validation) With Assignment</title>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 
 </head>
@@ -10,6 +10,11 @@
 
 <hr/>
 	<div class="container">
+		<hr/>
+		<div class="text-center">
+			<h1 >Day-14 (Validation) With Assignment</h1>
+		</div>
+		<hr/>
 		<div class="row">
 			<div class="col-sm-6 m-auto">
 				<div class="card">
@@ -73,6 +78,13 @@
 							</div>
 
 						</div>
+
+						<div class="row form-group">
+							<label class="col-form-label col-sm-3">Image</label>
+							<div class="col-sm-9">
+								<input type="file" name="image" class="form-control" accept="image/*" id="imageName">
+							</div>
+						</div>
 						<!--<div class="row form-group">-->
 							<!--<label class="col-form-label col-sm-3">Last Name</label>-->
 							<!--<div class="col-sm-9">-->
@@ -85,13 +97,27 @@
 								<!--<input type="text" name="last_name" id="full" class="form-control">-->
 							<!--</div>-->
 						<!--</div>-->
+						<!--<div class="row form-group">-->
+							<!--<label class="col-form-label col-sm-3"></label>-->
+							<!--<div class="col-sm-9">-->
+								<!--<input type="submit" name="btn" id="btnSecond" class="btn btn-success" value="Check">-->
+							<!--</div>-->
+						<!--</div>-->
+
 						<div class="row form-group">
 							<label class="col-form-label col-sm-3"></label>
 							<div class="col-sm-9">
-								<input type="submit" name="btn" id="" class="btn btn-success" value="Submit">
+								<input type="submit" name="btn" id="byt" class="btn btn-success" value="Submit">
 							</div>
 						</div>
 						</form>
+						<div id="show" style="display: none;">
+							<hr/>
+								<div class="container" style="min-height: 300px; text-align: center;">
+									<img src="" alt="" height="300px" width="450px" id="image">
+								</div>
+							<hr/>
+						</div>
 					</div>
 				</div>
 			</div>

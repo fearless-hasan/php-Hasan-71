@@ -77,7 +77,28 @@
     echo ($x.=$y).'<br/>';
     echo (($x.=$y)+10).'<br/>';
     $z = ($x.=$y)+10;
-    echo ($z+10).'<br/>';
+
+    if($x%400==0) {
+        echo 'Leap Year.<br/>';
+    } else if($x%4==0 && $x%100!=0) {
+        echo 'Leap Year.<br/>';
+    } else {
+        echo 'Not Leap Year.<br/>';
+    }
+
+    switch ($x){
+        case 1:
+            //do something
+            break;
+        case 2:
+            //do something
+            break;
+        case 3:
+            //do something
+            break;
+        default:
+            //do something
+    }
 
 
     /*
@@ -93,6 +114,21 @@
             * DO WHILE
             * FOREACH
      */
+
+    for($i=0 ;$i<10; $i++){
+        echo 'We are learning php.<br/>';
+    }
+    $i=0;
+    while($i<10){
+        echo 'While php.<br/>';
+        $i++;
+    }
+    $i=0;
+    do{
+        echo 'Next we will learn laravel.<br/>';
+        $i++;
+    }
+    while($i<10);
 
     function demo() {
         echo "Hello Function.<br/>";
