@@ -8,5 +8,16 @@
  */
 class Functionality
 {
-
+	public function increasing(var a,var b){
+		var result = "";
+		for(var i = a;i<=b;i++) {
+			result += i;
+		}
+	}
+	public function decreasing(var a,var b){
+		var result = "";
+		for(var i = a;i>=b;i--) {
+			result += i;
+		}
+	}
 }
