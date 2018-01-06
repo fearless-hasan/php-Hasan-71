@@ -14,6 +14,7 @@ var indicator = 0;
 var operator = '';
 var flagMinus = '';
 var pointCount = 0;
+var resultValue;
 
 operateFunction = function() {
 	number[0] = Number(resultString[0]);
@@ -303,44 +304,54 @@ var btnAddition = document.getElementById('normAddition');
 btnAddition.onclick = function(){
 	var firstNumberValue = Number(document.getElementById('firstNumber').value);
 	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue+secondNumberValue;
+	resultValue = firstNumberValue+secondNumberValue;
 	//alert(fullNameValue);
 	document.getElementById('normResult').value=resultValue;
 };
 
-var btnAddition = document.getElementById('normSubtraction');
-btnAddition.onclick = function(){
+var btnSubtraction = document.getElementById('normSubtraction');
+btnSubtraction.onclick = function(){
 	var firstNumberValue = Number(document.getElementById('firstNumber').value);
 	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue-secondNumberValue;
+	resultValue = firstNumberValue-secondNumberValue;
 	//alert(fullNameValue);
 	document.getElementById('normResult').value=resultValue;
 };
 
-var btnAddition = document.getElementById('normMultiplication');
-btnAddition.onclick = function(){
+var btnMultiplication = document.getElementById('normMultiplication');
+btnMultiplication.onclick = function(){
 	var firstNumberValue = Number(document.getElementById('firstNumber').value);
 	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue*secondNumberValue;
+	resultValue = firstNumberValue*secondNumberValue;
 	//alert(fullNameValue);
 	document.getElementById('normResult').value=resultValue;
 };
 
-var btnAddition = document.getElementById('normDivision');
-btnAddition.onclick = function(){
+var btnDivision = document.getElementById('normDivision');
+btnDivision.onclick = function(){
 	var firstNumberValue = Number(document.getElementById('firstNumber').value);
 	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue/secondNumberValue;
+	resultValue = firstNumberValue/secondNumberValue;
 	//alert(fullNameValue);
 	document.getElementById('normResult').value=resultValue;
 };
 
 
-var btnAddition = document.getElementById('normRemainder');
-btnAddition.onclick = function(){
+var btnRemainder = document.getElementById('normRemainder');
+btnRemainder.onclick = function(){
 	var firstNumberValue = Number(document.getElementById('firstNumber').value);
 	var secondNumberValue = Number(document.getElementById('secondNumber').value);
-	var resultValue = firstNumberValue%secondNumberValue;
+	resultValue = firstNumberValue%secondNumberValue;
 	//alert(fullNameValue);
 	document.getElementById('normResult').value=resultValue;
 };
+
+
+
+
+$(test).keypress(function(e){
+    var checkWebkitandIE=(e.which==26 ? 1 : 0);
+    var checkMoz=(e.which==122 && e.ctrlKey ? 1 : 0);
+
+    if (checkWebkitandIE || checkMoz) alert("sadf");
+});

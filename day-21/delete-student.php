@@ -1,0 +1,63 @@
+<?php
+require_once 'vendor/autoload.php';
+
+use App\classes\Student;
+
+$message = "";
+$id = $_GET['id'];
+$message = Student::deleteStudentById($id);
+
+$queryResult = Student::getAllStudentInfo();
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Day-21 (CRUD)</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
+</head>
+<body>
+
+
+<hr/>
+<nav class=" w-25 container">
+    <a href="add-student.php">Add Student</a> ||
+    <a href="view-student.php">View Student</a>
+</nav>
+
+<hr/>
+
+<h1 class="text-center text-danger"><?php echo $message; ?></h1>
+<hr/>
+<table class="table w-75 m-auto">
+    <tr>
+        <th>ID</th>
+        <th>Student Name</th>
+        <th>Student Email</th>
+        <th>Student Mobile</th>
+        <th>Operation</th>
+    </tr>
+
+    <?php while($student = mysqli_fetch_assoc($queryResult)){ ?>
+        <tr>
+            <td><?php echo $student['id']; ?></td>
+            <td><?php echo $student['name']; ?></td>
+            <td><?php echo $student['email']; ?></td>
+            <td><?php echo $student['mobile']; ?></td>
+            <td>
+                <a href="update-student.php?id=<?=$student['id']; ?>" class="btn btn-primary">Update</a>
+                <a href="delete-student.php?id=<?=$student['id']; ?>" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    <?php } ?>
+</table>
+<hr/>
+
+
+<script src="../js/jquery-3.2.1.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+</body>
+</html>
