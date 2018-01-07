@@ -19,7 +19,7 @@ echo DatabaseConnection::getDbConn();
 <head>
     <meta charset="utf-8"/>
     <title>Assignment-21 (CRUD)</title>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
 
 </head>
 <body>
@@ -59,8 +59,8 @@ echo DatabaseConnection::getDbConn();
 <hr/>
 
 
-<script src="../js/jquery-3.2.1.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.js"></script>
+<script src="../../js/jquery-3.2.1.js"></script>
+<script src="../../js/popper.min.js"></script>
+<script src="../../js/bootstrap.js"></script>
 </body>
 </html>
