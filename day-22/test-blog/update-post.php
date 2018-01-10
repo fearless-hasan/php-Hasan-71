@@ -4,11 +4,10 @@ require_once 'vendor/autoload.php';
 use App\classes\BlogDatabase;
 
 $message = "";
-if(isset($_POST['btn'])){
-
-    $message = BlogDatabase::saveBlog($_POST);
-}
-
+$queryResult = BlogDatabase::getPostById($_GET['id'], $_POST);
+$post = mysqli_fetch_assoc($queryResult);
+if(isset($_POST['btn']))
+    $message = BlogDatabase::updateInfoById($_GET['id'], $_POST);
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,26 +39,26 @@ if(isset($_POST['btn'])){
                         <div class="row form-group">
                             <label class="col-form-label col-sm-5">Blog Title</label>
                             <div class="col-sm-7">
-                                <input type="text" name="blogTitle" class="form-control">
+                                <input type="text" name="blogTitle" class="form-control" value="<?=$post['blogTitle']; ?>">
                             </div>
                         </div>
                         <div class="row form-group">
                             <label class="col-form-label col-sm-5">Author Name</label>
                             <div class="col-sm-7">
-                                <input type="text" name="authorName" class="form-control">
+                                <input type="text" name="authorName" class="form-control" value="<?=$post['authorName']; ?>">
                             </div>
                         </div>
                         <div class="row form-group">
                             <label class="col-form-label col-sm-5">Blog Description</label>
                             <div class="col-sm-7">
-                                <input type="text" name="blogDescription"  class="form-control">
+                                <input type="text" name="blogDescription"  class="form-control" value="<?=$post['blogDescription']; ?>">
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <label class="col-form-label col-sm-5"> Publication Status </label>
-                            <label> <input type="radio" name="publicationStatus" value="published"> Published </label>
-                            <label> <input type="radio" name="publicationStatus" value="unpublished"> Unpublished </label>
+                            <label> <input type="radio" name="publicationStatus" value="published" <?php if($post['publicationStatus']=="published") echo"checked"; ?> > Published </label>
+                            <label> <input type="radio" name="publicationStatus" value="unpublished" <?php if($post['publicationStatus']=="unpublished") echo"checked"; ?> > Unpublished </label>
                         </div>
 
                         <div class="row form-group">

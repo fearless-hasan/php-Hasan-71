@@ -4,7 +4,9 @@ require_once 'vendor/autoload.php';
 use App\classes\BlogDatabase;
 
 $message = "";
-$message = BlogDatabase::saveBlog();
+$queryResult = BlogDatabase::viewBlog();
+$queryResult2 = BlogDatabase::viewBlog();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +21,7 @@ $message = BlogDatabase::saveBlog();
 
 <hr/>
 <nav class="navbar w-25 container">
-    <a href="add-student.php">Add Post</a> ||
+    <a href="new-post.php">Add Post</a> ||
     <a href="view-post.php">View Posts</a>
 </nav>
 <hr/>
@@ -29,33 +31,67 @@ $message = BlogDatabase::saveBlog();
 <div class="container">
 
     <div class="row">
-        <div class="col-sm-6 m-auto">
+        <div class="col-sm-10 m-auto">
             <div class="card">
                 <div class="card-body">
-
-                    <h1 class="text-center text-success"><?php echo $message; ?></h1>
                     <hr/>
-                    <table class="table w-75 m-auto">
+                    <table class="table w-100 m-auto">
                         <tr>
                             <th>ID</th>
-                            <th>Student Name</th>
-                            <th>Student Email</th>
-                            <th>Student Mobile</th>
-                            <th>Operation</th>
+                            <th>Blog Title</th>
+                            <th>Author Name</th>
+                            <th>Blog Description</th>
+                            <th>Publication Status</th>
                         </tr>
 
-                        <?php while($student = mysqli_fetch_assoc($queryResult)){ ?>
+                        <?php while($post = mysqli_fetch_assoc($queryResult2)){ ?>
                             <tr>
-                                <td><?php echo $student['id']; ?></td>
-                                <td><?php echo $student['name']; ?></td>
-                                <td><?php echo $student['email']; ?></td>
-                                <td><?php echo $student['mobile']; ?></td>
+                                <td><?php echo $post['id']; ?></td>
+                                <td><?php echo $post['blogTitle']; ?></td>
+                                <td><?php echo $post['authorName']; ?></td>
+                                <td><?php echo $post['blogDescription']; ?></td>
+                                <td><?php echo $post['publicationStatus']; ?></td>
                                 <td>
-                                    <a href="update-student.php?id=<?=$student['id']; ?>" class="btn btn-primary">Update</a>
-                                    <a href="delete-student.php?id=<?=$student['id']; ?>" class="btn btn-danger">Delete</a>
+                                    <a href="update-post.php?id=<?=$post['id']; ?>" class="btn btn-primary">Update</a>
+                                    <a href="delete-post.php?id=<?=$post['id']; ?>" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php } ?>
+                    </table>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10 m-auto">
+            <div class="card">
+                <div class="card-body">
+                    <hr/>
+                    <table class="table w-100 m-auto">
+                        <tr>
+                            <th>ID</th>
+                            <th>Blog Title</th>
+                            <th>Author Name</th>
+                            <th>Blog Description</th>
+                            <th>Publication Status</th>
+                        </tr>
+
+                        <?php while($post = mysqli_fetch_assoc($queryResult)){
+                            if($post['publicationStatus']=="published") { ?>
+                                <tr>
+                                    <td><?php echo $post['id']; ?></td>
+                                    <td><?php echo $post['blogTitle']; ?></td>
+                                    <td><?php echo $post['authorName']; ?></td>
+                                    <td><?php echo $post['blogDescription']; ?></td>
+                                    <td><?php echo $post['publicationStatus']; ?></td>
+                                    <td>
+                                        <a href="update-post.php?id=<?=$post['id']; ?>" class="btn btn-primary">Update</a>
+                                        <a href="delete-post.php?id=<?=$post['id']; ?>" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            <?php } } ?>
                     </table>
                     <hr/>
                 </div>
