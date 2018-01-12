@@ -7,11 +7,23 @@ if($_SESSION['id'] == null){
 }
 
 require_once '../vendor/autoload.php';
-$login = new App\classes\Login();
+use App\classes\Login;
 
 if(isset($_GET['logout'])){
-    $login->adminLogout();
+    Login::adminLogout();
 }
+
+$message = "";
+if(isset($_GET['action'])){
+
+    $message = Login::deleteCategoryById($_GET['id']);
+}
+
+if(isset($_POST['update_category'])){
+
+    $message = Login::updateCategoryById($id, $_POST);
+}
+
 //    echo '<pre>';
 //    print_r($_SESSION);
 //    unset($_SESSION['name']);
@@ -32,10 +44,10 @@ if(isset($_GET['logout'])){
 <?php include_once 'includes/menu.php'; ?>
 <div class="container" style="margin-top: 150px;">
     <div class="row">
-        <div class="col-sm-8 mx-auto">
+        <div class="col-sm-10 mx-auto">
             <div class="card">
                 <div class="card-title m-auto">
-                    <p> <b><i>Add Category</i></b></p>
+                    <p style="margin-top: 25px;"> <b><i>Manage Category</i></b></p>
 
                 </div>
                 <div class="card-body">
@@ -50,46 +62,43 @@ if(isset($_GET['logout'])){
                         </tr>
                         </thead>
                         <tbody>
+                        <?php
+                        $queryResult = Login::getAllCategory();
+                        $i = 1;
+                        while($category = mysqli_fetch_assoc($queryResult)) {
+                            $status = $category['category_publication_status'];
+                            ?>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row"><?=$i; ?></th>
+                            <td><?=$category['category_name']; ?></td>
+                            <td><?=$category['category_description']; ?></td>
+                            <td class="btn <?php if ($status == "published") echo "btn-success"; else echo "btn-danger"; ?>" ><?php echo $category['category_publication_status'] ?></td>
                             <td>
-                                <a href="" class="btn btn-outline-info">Edit</a>
-                                <a href="" class="btn btn-outline-danger">Delete</a>
+                                <a href="update-category.php?action=true& id=<?=$category['id']; ?>" class="btn btn-outline-info">Update</a>
+                                <a href="?action=true& id=<?=$category['id']; ?>" class="btn btn-outline-danger" name="delete_category">Delete</a>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <a href="" class="btn btn-outline-info">Edit</a>
-                                <a href="" class="btn btn-outline-danger">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <th scope="row">3</th>
-                            <th scope="row">3</th>
-                            <td>@twitter</td>
-                            <td>
-                                <a href="" class="btn btn-outline-info">Edit</a>
-                                <a href="" class="btn btn-outline-danger">Delete</a>
-                            </td>
-                        </tr>
+                        <?php $i++; } ?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+    <?php if($message!="") { ?>
+        <div class=" btn btn-danger d-block w-50 m-auto">
+            <h4 align="center">
+                <?=$message; ?>
+            </h4>
+        </div>
+    <?php } ?>
 </div>
+
+
 
 <script src="../assets/js/jquery-3.2.1.js"></script>
 <script src="../assets/js/bootstrap.bundle.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
+
 </body>
 </html>

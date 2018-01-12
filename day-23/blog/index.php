@@ -1,4 +1,14 @@
+<?php
+session_start();
 
+require_once 'vendor/autoload.php';
+use App\classes\Login;
+
+if(isset($_GET['logout'])){
+    Login::adminLogout();
+    header('Location: index.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +55,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <?php if(isset($_SESSION['id'])){
+                    ?>
+                    <li>
+                        <a class="nav-link btn btn-danger" href="?logout=true">Logout</a>
+                    </li>
+                <?php
+                } ?>
             </ul>
         </div>
     </div>
@@ -63,57 +80,31 @@
     <!-- Page Features -->
     <div class="row text-center">
 
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
+    <?php
+    $queryResult = Login::getAllPost();
+    while($post = mysqli_fetch_assoc($queryResult)) {
+    $status = $post['post_publication_status'];
+    if($status == "published"){
+    ?>
 
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                <img class="card-img-top" src="admin/<?=$post['post_image']; ?>" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+                    <h4 class="card-title"><?=$post['post_title']; ?></h4>
+                    <p class="card-text"><?=$post['post_short_description']; ?></p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
+                    <button class="btn btn-primary" id="long_description">Find Long Description!</button>
+                    <span class="" id="long" ><?=$post['post_long_description']; ?></span>
                 </div>
             </div>
         </div>
+    <?php
+    } }
+    ?>
 
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
 
     </div>
     <!-- /.row -->
@@ -131,8 +122,13 @@
 
 <!-- Bootstrap core JavaScript -->
 <!--<script src="assets/js/jquery.min.js"></script>-->
+<script src="assets/js/jquery-3.2.1.js"></script>
+<script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+
+
 
 </body>
 

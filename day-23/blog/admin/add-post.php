@@ -7,11 +7,23 @@ if($_SESSION['id'] == null){
 }
 
 require_once '../vendor/autoload.php';
-$login = new App\classes\Login();
+use App\classes\Login;
 
 if(isset($_GET['logout'])){
-    $login->adminLogout();
+    Login::adminLogout();
 }
+
+$message = "";
+if(isset($_POST['add_post'])){
+    $message = Login::addPost($_POST, $_FILES);
+
+
+}
+
+
+
+
+
 //    echo '<pre>';
 //    print_r($_SESSION);
 //    unset($_SESSION['name']);
@@ -30,30 +42,36 @@ if(isset($_GET['logout'])){
 </head>
 <body>
 <?php include_once 'includes/menu.php'; ?>
-<div class="container" style="margin-top: 150px;">
+<div class="container" style="margin-top: 50px;">
     <div class="row">
         <div class="col-sm-8 mx-auto">
             <div class="card">
-                <div class="card-title m-auto">
-                    <p> <b><i>Add Category</i></b></p>
+                <div class="card-title m-auto" style="padding-top: 25px;">
+                    <p> <b><i>Add Post</i></b></p>
 
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-3 col-form-label">Blog Name</label>
                             <div class="col-sm-9">
-                                <select name="category_name" class="form-control">
+                                <select name="category_id" class="form-control">
                                     <option>---Select Category Name---</option>
-                                    <option value="1">Category One</option>
-                                    <option value="2">Category Two</option>
+                                    <?php
+                                    $queryResult = Login::getAllCategory();
+                                    while($category = mysqli_fetch_assoc($queryResult)) {
+                                    $status = $category['category_publication_status'];
+                                    if($status == "published") {
+                                    ?>
+                                    <option value="<?=$category['id']; ?>"> <?=$category['category_name']; ?></option>
+                                    <?php } } ?>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-3 col-form-label">Blog Title</label>
                             <div class="col-sm-9">
-                                <input type="text" name="blog_title" class="form-control">
+                                <input type="text" name="post_title" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -71,21 +89,21 @@ if(isset($_GET['logout'])){
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-3 col-form-label">Long Description</label>
+                            <label for="inputPassword3" class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <input type="file" class="form-control">
+                                <input type="file" class="form-control" name="image">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-3 col-form-label">Publication Status</label>
                             <div class="col-sm-9">
-                                <input type="radio" name="status" value="1"> Published
-                                <input type="radio" name="status" value="0"> Unpublished
+                                <input type="radio" name="status" value="published"> Published
+                                <input type="radio" name="status" value="unpublished"> Unpublished
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 m-auto">
-                                <button type="submit" class="btn btn-outline-primary btn-block" name="btn">Publish</button>
+                                <button type="submit" class="btn btn-outline-primary btn-block" name="add_post">Publish</button>
                             </div>
                         </div>
                     </form>
@@ -93,6 +111,13 @@ if(isset($_GET['logout'])){
             </div>
         </div>
     </div>
+    <?php if($message!="") { ?>
+        <div class=" btn btn-success d-block w-50 m-auto">
+            <h4 align="center">
+                <?=$message; ?>
+            </h4>
+        </div>
+    <?php } ?>
 </div>
 
 <script src="../assets/js/jquery-3.2.1.js"></script>

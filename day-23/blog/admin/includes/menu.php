@@ -21,8 +21,8 @@
     Blog Info
 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="add-blog.php">Add Blog</a>
-                    <a class="dropdown-item" href="manage-blog.php">Manage Blog</a>
+                    <a class="dropdown-item" href="add-post.php">Add Blog</a>
+                    <a class="dropdown-item" href="manage-post.php">Manage Blog</a>
                 </div>
             </li>
         </ul>

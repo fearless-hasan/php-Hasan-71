@@ -13,9 +13,24 @@ if(isset($_GET['logout'])){
     Login::adminLogout();
 }
 
+
+$category_name = "";
+$category_description = "";
+$status = "";
 $message = "";
-if(isset($_POST['add_category'])){
-    $message = Login::addCategory($_POST);
+if(isset($_GET['action'])) {
+    $id = $_GET['id'];
+
+    $queryResult = Login::selectCategoryById($id);
+    $category = mysqli_fetch_assoc($queryResult);
+
+    $category_name = $category['category_name'];
+    $category_description = $category['category_description'];
+    $status = $category['category_publication_status'];
+
+    if (isset($_POST['update_category'])) {
+        $message = Login::updateCategoryById($id, $_POST);
+    }
 }
 //    echo '<pre>';
 //    print_r($_SESSION);
@@ -48,28 +63,27 @@ if(isset($_POST['add_category'])){
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-3 col-form-label">Category Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="category_name">
+                                <input type="text" class="form-control" name="category_name" value="<?=$category_name; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-3 col-form-label">Category Description</label>
                             <div class="col-sm-9">
                                 <textarea class="form-control" name="category_description">
-
+                                    <?=$category_description; ?>
                                 </textarea>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-3 col-form-label">Publication Status</label>
                             <div class="col-sm-9">
-
-                                <input type="radio" name="status" value="published"> Published
-                                <input type="radio" name="status" value="unpublished"> Unpublished
+                                <input type="radio" name="category_publication_status" value="published" checked <?php if($status == "published") echo "checked"; ?> > Published
+                                <input type="radio" name="category_publication_status" value="unpublished" <?php if($status == "unpublished") echo "checked"; ?> > Unpublished
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 m-auto">
-                                <button type="submit" class="btn btn-outline-primary btn-block" name="add_category">Publish</button>
+                                <button type="submit" class="btn btn-outline-primary btn-block" name="update_category">Publish</button>
                             </div>
                         </div>
                     </form>
