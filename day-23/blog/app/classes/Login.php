@@ -179,7 +179,7 @@ class Login
     }
 
     public function getAllPost(){
-        $sql = "SELECT * FROM posts ";
+        $sql = "SELECT p.*, c.category_name FROM posts as p, categories as c WHERE p.category_id = c.id ";
         if(mysqli_query(Database::dbConnection(), $sql)){
             $queryResult = mysqli_query(Database::dbConnection(), $sql);
             return $queryResult;

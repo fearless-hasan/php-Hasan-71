@@ -68,7 +68,7 @@ if (isset($_POST['update_post'])) {
 
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="" method="POST" enctype="multipart/form-data" name="edit_form_blog">
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-3 col-form-label">Blog Name</label>
                             <div class="col-sm-9">
@@ -150,5 +150,9 @@ if (isset($_POST['update_post'])) {
 <script src="../assets/js/jquery-3.2.1.js"></script>
 <script src="../assets/js/bootstrap.bundle.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
+
+<script>
+    document.forms['edit_form_blog'].elements['category_id'].value = '<?=$post['category_id']; ?>' ;
+</script>
 </body>
 </html>

@@ -21,7 +21,7 @@ if(isset($_GET['action'])){
 
 if(isset($_POST['update_category'])){
 
-    $message = Login::updateCategoryById($id, $_POST);
+    $message = Login::updatePostById($id, $_POST);
 }
 
 //    echo '<pre>';
@@ -73,7 +73,7 @@ if(isset($_POST['update_category'])){
                             ?>
                             <tr>
                                 <th scope="row"><?=$i; ?></th>
-                                <td><?=$post['category_id']; ?></td>
+                                <td><?=$post['category_name']; ?></td>
                                 <td><?=$post['post_title']; ?></td>
                                 <td><?=$post['post_short_description']; ?></td>
                                 <td><?=$post['post_long_description']; ?></td>
@@ -114,8 +114,8 @@ if(isset($_POST['update_category'])){
                                     </div>
                                     <div class="card-footer">
                                         <div class="btn btn-block <?php if ($status == "published") echo "btn-success"; else echo "btn-danger"; ?>" ><?php echo $post['post_publication_status'] ?></div>
-                                        <a href="update-post.php?action=true& id=<?=$post['id']; ?>" class="btn btn-outline-info">Update</a>
-                                        <a href="?action=true& id=<?=$post['id']; ?>" class="btn btn-outline-danger" name="delete_category">Delete</a>
+                                        <a href="update-post.php?action=true& id=<?=$post['id']; ?>" class="btn btn-outline-info" style="width: 48%;">Update</a>
+                                        <a href="?action=true& id=<?=$post['id']; ?>" class="btn btn-outline-danger" name="delete_category" style="width: 48%;">Delete</a>
                                     </div>
                                 </div>
                             </div>
