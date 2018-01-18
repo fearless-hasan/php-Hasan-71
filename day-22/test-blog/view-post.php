@@ -64,6 +64,8 @@ $queryResult2 = BlogDatabase::viewBlog();
         </div>
     </div>
 
+    <hr/>
+    <h1 class="text-center text-primary">Showing published post</h1>
     <div class="row">
         <div class="col-sm-10 m-auto">
             <div class="card">

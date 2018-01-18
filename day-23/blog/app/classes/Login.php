@@ -188,6 +188,17 @@ class Login
         }
     }
 
+    public function getAllPublishedPost(){
+        $sql = "SELECT p.*, c.category_name FROM posts as p, categories as c WHERE (p.category_id = c.id) AND (p.post_publication_status = 'published') ";
+        if(mysqli_query(Database::dbConnection(), $sql)){
+            $queryResult = mysqli_query(Database::dbConnection(), $sql);
+            return $queryResult;
+        } else {
+            die("query problem".mysqli_error(Database::dbConnection()));
+        }
+    }
+
+
     public function selectPostById($id)
     {
         $sql = "SELECT * FROM posts WHERE id = '$id' ";

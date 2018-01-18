@@ -7,6 +7,7 @@ $message = "";
 if(isset($_POST['btn'])){
 
     $message = BlogDatabase::saveBlog($_POST);
+    header('Location: view-post.php');
 }
 
 ?>

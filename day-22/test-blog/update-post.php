@@ -6,8 +6,10 @@ use App\classes\BlogDatabase;
 $message = "";
 $queryResult = BlogDatabase::getPostById($_GET['id'], $_POST);
 $post = mysqli_fetch_assoc($queryResult);
-if(isset($_POST['btn']))
+if(isset($_POST['btn'])) {
     $message = BlogDatabase::updateInfoById($_GET['id'], $_POST);
+    header('Location: view-post.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
