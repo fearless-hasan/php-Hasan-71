@@ -41,26 +41,39 @@ if(isset($_GET['logout'])){
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="post.php">All Post
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#home">Home
+                    <a class="nav-link" href="home.php">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#liveMessage">Live Message</a>
+                    <a class="nav-link" href="live-message.php">Live Message</a>
                 </li>
                 <?php if(isset($_SESSION['id'])){
                     ?>
-                    <li>
-                        <a class="nav-link btn btn-danger" href="?logout=true">Logout</a>
-                    </li>
-                <?php
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle bg-danger text-light font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?=$_SESSION['name']; ?>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item bg-primary" href="../admin">Admin Panel</a>
+                                <a class="dropdown-item bg-success" href="?logout=true">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <?php
                 } ?>
             </ul>
         </div>
@@ -79,8 +92,9 @@ if(isset($_GET['logout'])){
         - Eric S. Raymond
         </blockquote>
         </p>
-        <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#developerModal">Call Developer!</a>
+        <a class="btn btn-primary btn-lg text-light" data-toggle="modal" data-target="#developerModal">Call Developer!</a>
     </header>
+    <hr/>
 
     <!-- Page Features -->
     <div class="row text-center">
@@ -97,10 +111,11 @@ if(isset($_GET['logout'])){
                     <p class="card-text"><?=$post['post_short_description']; ?></p>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" id="long_description">Find Long Description!</button>
+                    <a class="btn btn-primary" id="long_description" href="post.php?id=<?=$post['id']; ?>">Find Long Description!</a>
                 </div>
             </div>
         </div>
+
     <?php
     }
     ?>

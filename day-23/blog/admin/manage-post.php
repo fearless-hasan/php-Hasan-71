@@ -16,7 +16,7 @@ if(isset($_GET['logout'])){
 $message = "";
 if(isset($_GET['action'])){
 
-    $message = Login::deleteCategoryById($_GET['id']);
+    $message = Login::deletePostById($_GET['id']);
 }
 
 if(isset($_POST['update_category'])){
@@ -108,9 +108,6 @@ if(isset($_POST['update_category'])){
                                     <div class="card-body">
                                         <h4 class="card-title"><?=$post['post_title']; ?></h4>
                                         <p class="card-text"><?=$post['post_short_description']; ?></p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <span class="" id="long" ><?=$post['post_long_description']; ?></span>
                                     </div>
                                     <div class="card-footer">
                                         <div class="btn btn-block <?php if ($status == "published") echo "btn-success"; else echo "btn-danger"; ?>" ><?php echo $post['post_publication_status'] ?></div>

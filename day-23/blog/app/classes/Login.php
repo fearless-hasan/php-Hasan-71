@@ -210,6 +210,16 @@ class Login
         }
     }
 
+    public function deletePostById($id){
+        $sql = "DELETE FROM posts WHERE id = '$id' ";
+        if(mysqli_query(Database::dbConnection(), $sql)) {
+            $message = "Deleted Successfully";
+            return $message;
+        } else {
+            die('Query Problem'.mysqli_error(Database::dbConnection()));
+        }
+    }
+
     public function updatePostById($id, $data, $files)
     {
 
@@ -245,7 +255,7 @@ class Login
 
 //                    move_uploaded_file($file_temp, $uploaded_image);
 
-                    $message = "Post Inserted Successfully";
+                    $message = "Post Updated Successfully";
                     return $message;
                 } else {
                     die('Query Problem' . mysqli_error(Database::dbConnection()));
@@ -256,4 +266,31 @@ class Login
         return $message;
 
     }
+
+    public function addComment($data){
+        $post_id = $data['post_id'];
+        $commenter_name = $data['commenter_name'];
+        $comment = $data['comment'];
+        $view_status = 'unseen';
+        $publication_status = 'unpublished';
+        $sql = "INSERT INTO `comments`(`post_id`, `commenter_name`, `comment`, `view_status`, `publication_status`) VALUES ('$post_id','$commenter_name','$comment','$view_status','$publication_status')";
+        if(mysqli_query(Database::dbConnection(), $sql)){
+            $message = "Commented";
+            return $message;
+        } else {
+            die("query problem".mysqli_error(Database::dbConnection()));
+        }
+    }
+
+
+    public function getAllPublishedComment($id){
+        $sql = "SELECT * FROM comments WHERE (post_id = '$id') AND (publication_status = 'published') ";
+        if(mysqli_query(Database::dbConnection(), $sql)){
+            $queryResult = mysqli_query(Database::dbConnection(), $sql);
+            return $queryResult;
+        } else {
+            die("query problem".mysqli_error(Database::dbConnection()));
+        }
+    }
+
 }
